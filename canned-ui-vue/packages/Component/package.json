@@ -2,21 +2,9 @@
   "name": "cc-vue",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
-  "files": [
-    "../../dist/cc-vue"
-  ],
-  "main": "../../dist/cc-vue/cc-vue.umd.js",
-  "module": "../../dist/cc-vue/cc-vue.es.js",
-  "types": "../../dist/cc-vue/types/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./../../dist/cc-vue/cc.es.js",
-      "require": "./../../dist/cc-vue/cc.umd.js"
-    }
-  },
   "scripts": {
-    "build": "vue-tsc --noEmit && vite build --config lib.component.config.ts"
+    "build": "vue-tsc --noEmit && vite build --config lib.component.config.ts && pnpm run dist:setup",
+    "dist:setup": "cp package.prod.json ./../../dist/ct-vue/package.json"  
   },
   "dependencies": {
     "vue": "^3.2.41",

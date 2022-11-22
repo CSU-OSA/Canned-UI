@@ -3,9 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "build": "vue-tsc --noEmit && vite build --config lib.theme.config.ts && pnpm run dist:setup",
-    "dist:setup": "cp package.prod.json ./../../dist/ct-vue/package.json"  
+  "main": "ct-vue.umd.js",
+  "module": "ct-vue.es.js",
+  "exports": {
+    ".": {
+      "import": "ct-vue.es.js",
+      "require": "ct-vue.umd.js"
+    }
   },
   "dependencies": {
     "@material/material-color-utilities": "^0.2.0",

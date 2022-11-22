@@ -1,15 +1,19 @@
 {
-  "name": "ct-vue",
+  "name": "cc-vue",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "build": "vue-tsc --noEmit && vite build --config lib.theme.config.ts && pnpm run dist:setup",
-    "dist:setup": "cp package.prod.json ./../../dist/ct-vue/package.json"  
+  "main": "cc-vue.umd.js",
+  "module": "cc-vue.es.js",
+  "exports": {
+    ".": {
+      "import": "cc-vue.es.js",
+      "require": "cc-vue.umd.js"
+    }
   },
   "dependencies": {
-    "@material/material-color-utilities": "^0.2.0",
-    "vue": "^3.2.41"
+    "vue": "^3.2.41",
+    "ct-vue": "files:dist/lib-theme"
   },
   "devDependencies": {
     "@types/node": "^18.11.9",
