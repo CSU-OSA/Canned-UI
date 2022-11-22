@@ -6,7 +6,7 @@ import vue from "@vitejs/plugin-vue";
 export default defineConfig({
   build: {
     //构建输出目录
-    outDir: 'dist/lib-theme',
+    outDir: '../../dist/ct-vue',
     lib: {
       //入口文件
       entry: resolve(__dirname, './index.ts'),

@@ -1,9 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import CanComponentsPlugin from "cc-vue";
+import CanComponents from "../packages/Component";
 import router from "./router";
 
 createApp(App)
     .use(router)
-    .use(CanComponentsPlugin)
+    .use(CanComponents)
     .mount('#app')

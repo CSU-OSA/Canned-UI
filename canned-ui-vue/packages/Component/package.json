@@ -4,15 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "files": [
-    "../../dist/lib-component"
+    "../../dist/cc-vue"
   ],
-  "main": "../../dist/lib-component/cc-vue.umd.js",
-  "module": "../../dist/lib-component/cc-vue.es.js",
-  "types": "../../dist/lib-component/types/index.d.ts",
+  "main": "../../dist/cc-vue/cc-vue.umd.js",
+  "module": "../../dist/cc-vue/cc-vue.es.js",
+  "types": "../../dist/cc-vue/types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/lib-component/cc.es.js",
-      "require": "./dist/lib-component/cc.umd.js"
+      "import": "./../../dist/cc-vue/cc.es.js",
+      "require": "./../../dist/cc-vue/cc.umd.js"
     }
   },
   "scripts": {

@@ -4,16 +4,19 @@
   "version": "0.0.0",
   "type": "module",
   "files": [
-    "dist"
+    "../../dist/ct-vue"
   ],
-  "main": "./dist/ct.umd.js",
-  "module": "./dist/ct.es.js",
-  "types": "./dist/types/index.d.ts",
+  "main": "../../dist/ct-vue/ct-vue.umd.js",
+  "module": "../../dist/ct-vue/ct-vue.es.js",
+  "types": "../../dist/ct-vue/types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/ct.es.js",
-      "require": "./dist/ct.umd.js"
+      "import": "./dist/ct-vue/ct.es.js",
+      "require": "./dist/ct-vue/ct.umd.js"
     }
+  },
+  "scripts": {
+    "build": "vue-tsc --noEmit && vite build --config lib.theme.config.ts"
   },
   "dependencies": {
     "@material/material-color-utilities": "^0.2.0",

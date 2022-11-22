@@ -18,8 +18,9 @@
   "scripts": {
     "dev": "vite --mode dev",
     "build:lib-Component": "pnpm -C packages/Component build",
-    "build:lib-Theme": "vue-tsc --noEmit && vite build --config packages/Theme/lib.theme.config.ts",
+    "build:lib-Theme": "pnpm -C packages/Theme build",
     "build:doc": "vue-tsc --noEmit && vite build --config ./build/doc.config.ts && node script/copyDir.js",
+    "depend-i": "pnpm i",
     "prepack": "package"
   },
   "dependencies": {
@@ -42,7 +43,7 @@
     "vite-plugin-dts": "^1.7.1"
   },
   "peerDependencies": {
-    "cc-vue": "file:dist/lib-component",
-    "ct-vue": "file:dist/lib-theme"
+    "cc-vue": "file:dist/cc-vue",
+    "ct-vue": "file:dist/ct-vue"
   }
 }

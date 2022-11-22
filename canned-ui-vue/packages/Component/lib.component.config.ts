@@ -5,9 +5,12 @@ import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
   build: {
-    outDir: '../../dist/lib-component',
+    //构建输出目录
+    outDir: '../../dist/cc-vue',
     lib: {
+      //入口文件
       entry: resolve(__dirname, './index.ts'),
+      //包名
       name: 'CannedComponentVue',
       fileName: (format) => `cc-vue.${format}.js`,
     },
