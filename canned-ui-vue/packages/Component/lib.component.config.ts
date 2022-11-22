@@ -5,7 +5,7 @@ import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
   build: {
-    outDir: 'dist/lib-component',
+    outDir: '../../dist/lib-component',
     lib: {
       entry: resolve(__dirname, './index.ts'),
       name: 'CannedComponentVue',

@@ -15,6 +15,9 @@
       "require": "./dist/lib-component/cc.umd.js"
     }
   },
+  "scripts": {
+    "build": "vue-tsc --noEmit && vite build --config lib.component.config.ts"
+  },
   "dependencies": {
     "vue": "^3.2.41",
     "ct-vue": "files:dist/lib-theme"

@@ -5,8 +5,6 @@ specifiers:
   '@rollup/pluginutils': ^4.2.1
   '@types/node': ^18.11.9
   '@vitejs/plugin-vue': ^3.2.0
-  cc-vue: file:dist/lib-component
-  ct-vue: file:dist/lib-theme
   fp-ts: ^2.12.1
   inferred-types: ^0.22.0
   rollup: ^2.77.0
@@ -21,8 +19,6 @@ specifiers:
 
 dependencies:
   '@material/material-color-utilities': 0.2.0
-  cc-vue: file:dist/lib-component
-  ct-vue: file:dist/lib-theme
   vue: 3.2.45
   vue-router: 4.1.6_vue@3.2.45
 
@@ -1687,15 +1683,3 @@ packages:
     optionalDependencies:
       commander: 2.20.3
     dev: true
-
-  file:dist/lib-component:
-    resolution: {directory: dist/lib-component, type: directory}
-    name: lib-component
-    version: 0.0.0
-    dev: false
-
-  file:dist/lib-theme:
-    resolution: {directory: dist/lib-theme, type: directory}
-    name: lib-theme
-    version: 0.0.0
-    dev: false

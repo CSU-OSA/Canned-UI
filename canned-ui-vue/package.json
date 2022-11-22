@@ -17,7 +17,7 @@
   },
   "scripts": {
     "dev": "vite --mode dev",
-    "build:lib-Component": "vue-tsc --noEmit && vite build --config packages/Component/lib.component.config.ts",
+    "build:lib-Component": "pnpm -C packages/Component build",
     "build:lib-Theme": "vue-tsc --noEmit && vite build --config packages/Theme/lib.theme.config.ts",
     "build:doc": "vue-tsc --noEmit && vite build --config ./build/doc.config.ts && node script/copyDir.js",
     "prepack": "package"
@@ -25,9 +25,7 @@
   "dependencies": {
     "@material/material-color-utilities": "^0.2.0",
     "vue": "^3.2.41",
-    "vue-router": "^4.1.5",
-    "cc-vue": "file:dist/lib-component",
-    "ct-vue": "file:dist/lib-theme"
+    "vue-router": "^4.1.5"
   },
   "devDependencies": {
     "@types/node": "^18.11.9",
@@ -42,5 +40,9 @@
     "inferred-types": "^0.22.0",
     "rollup": "^2.77.0",
     "vite-plugin-dts": "^1.7.1"
+  },
+  "peerDependencies": {
+    "cc-vue": "file:dist/lib-component",
+    "ct-vue": "file:dist/lib-theme"
   }
 }
