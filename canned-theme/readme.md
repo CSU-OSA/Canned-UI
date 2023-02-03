@@ -17,16 +17,16 @@ if not all colors are defined, remaning colors will be generated automatically b
 
 ### Rx.js usage
 
-2. use our `Canned-Component`, our register callback to use theme config by the `theme` Observable in your components.
+2. use our `Canned-Component`, our register callback to use theme config by the `currentTheme` Observable in your components.
 
 ```js
-   import { theme } from 'canned-theme/rxjs'
-    theme.subscribe((themeConfig) => {
+   import { currentTheme } from 'canned-theme/rxjs'
+    currentTheme.subscribe((themeConfig) => {
       // do something with themeConfig
     });
 ```
 
-3. you can easily switch theme by the `switchTheme` function, or enable the night mode by the `switchMode` function.
+3. you can easily switch theme by the `switchTheme` function.
 
 ```js
    import { switchTheme } from 'canned-theme/rxjs'
@@ -38,19 +38,6 @@ if not all colors are defined, remaning colors will be generated automatically b
      )
    }
 ```
-
-```js
-    import { switchMode } from 'canned-theme/rxjs'
-    export const YourComponent = () => {
-      return (
-         <div>
-            <button onClick={() => switchMode('night')}>switch mode</button>
-         </div>
-      )
-    }
-    ```
-```
-
 ## Vue usage
 
 2. use our `Canned-Component`, our create your own component based on our `useTheme` hook.
@@ -81,7 +68,7 @@ if not all colors are defined, remaning colors will be generated automatically b
    }
 ```
 
-4. you can easily switch theme by the `useThemeSwitcher` hook, or enable the night mode by the `useMode` hook.
+4. you can easily switch theme by the `useThemeSwitcher` hook.
 
 ```js
    import { useThemeSwitcher } from 'canned-theme/vue'
@@ -93,18 +80,5 @@ if not all colors are defined, remaning colors will be generated automatically b
        </div>
      )
    }
-```
-
-```js
-    import { useMode } from 'canned-theme/vue'
-    export const YourComponent = () => {
-      const { mode, switchMode } = useMode()
-      return (
-         <div>
-            <button onClick={() => switchMode('night')}>switch mode</button>
-         </div>
-      )
-    }
-    ```
 ```
 
