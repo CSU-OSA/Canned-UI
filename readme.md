@@ -8,8 +8,8 @@ Canned-Theme is a theme manager for your UI component library. It allows you to 
 
 ## Canned-Components
 
-Canned-Components is a set of basic components for your UI component library. It includes a set of components that are commonly used in web applications, such as buttons, inputs, and so on, and are disnged to be used with Canned-Theme.
+Canned-Components is a set of basic components for your UI component library. It includes components that are commonly used in web applications, such as buttons, inputs, and so on, and are disnged to be used with Canned-Theme.
 
 ## Canned-Tools
 
-Canned-Tools is a set of tools for your UI component library. It includes a set of tools, such as a set of hooks, a set of utils, and so on.
+Canned-Tools is a set of tools for your UI component library, such as a set of hooks, a set of utils, and so on.
