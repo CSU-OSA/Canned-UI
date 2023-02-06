@@ -1,0 +1,49 @@
+{
+  "name": "cu-vue",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/cc.umd.js",
+  "module": "./dist/cc.es.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/cc.es.js",
+      "require": "./dist/cc.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite --mode dev",
+    "build:lib-Component": "pnpm -C packages/Component build",
+    "build:lib-Theme": "pnpm -C packages/Theme build",
+    "build:doc": "vue-tsc --noEmit && vite build --config ./build/doc.config.ts && node script/copyDir.js",
+    "depend-i": "pnpm i",
+    "prepack": "package"
+  },
+  "dependencies": {
+    "@material/material-color-utilities": "^0.2.0",
+    "vue": "^3.2.41",
+    "vue-router": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "@vitejs/plugin-vue": "^3.2.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.6.4",
+    "vite": "^3.2.3",
+    "vue-tsc": "^1.0.9",
+    "vite-plugin-md": "^0.20.4",
+    "@rollup/pluginutils": "^4.2.1",
+    "fp-ts": "^2.12.1",
+    "inferred-types": "^0.22.0",
+    "rollup": "^2.77.0",
+    "vite-plugin-dts": "^1.7.1"
+  },
+  "peerDependencies": {
+    "cc-vue": "file:dist/cc-vue",
+    "ct-vue": "file:dist/ct-vue"
+  }
+}
