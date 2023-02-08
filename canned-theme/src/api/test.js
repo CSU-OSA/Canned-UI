@@ -1,35 +1,23 @@
-let list = new Array("primary", "secondary", "tertiary", "info", "warn", "error", "surface", "outline");
+let list = [false, false, false, false, false, false, false, false];
 
-let option = {
-  "primaryContainer": "#000",
-  "secondaryContainer": "#fff",
-  "tertiaryContainer": "#eee",
-  "onTertiaryVariant": "#ddd",
-  "onInfoContainer": "#444",
-  "warn": "#ccc"
+let options = {
+  primary: "",
+  error: "",
+  onError:"aaa",
+  "aaa":"bbb"
 }
 
-let notContain = {
-  primary: true,
-  secondary: true,
-  tertiary: true,
-  info: true,
-  warn: true,
-  error: true,
-  surface: true,
-  outline: true
-}
+const mainColorList = ["primary", "secondary", "tertiary", "info", "warn", "error", "surface", "outline"]
 
-Object.keys(option).forEach(key => {
-  list = list.filter(item => {
-    return key.toLowerCase().search(item) == -1;
-  })
+const map = new Map();
 
+mainColorList.forEach((item, index) => { map.set(item, index); })
+
+Object.keys(options).forEach(key => {
+  if (mainColorList.includes(key))
+    list[map.get(key)] = true
 })
 
-list.forEach(key=>{
-  notContain[key] = false;
-})
+console.log(options["aaa"])
 
-console.log(notContain)
 

@@ -1,9 +1,8 @@
 import { colorType } from "./colorName.type";
+import { ThemeOptions } from "./theme.type";
 
-type mainColor = Record<colorType, boolean>
+export type mainColor = "primary" | "secondary" | "tertiary" | "info" | "warn" | "error" | "surface" | "outline";
 
-export type mainColorType = Pick<mainColor, "primary" | "secondary" | "tertiary" | "info" |
-    "warn" | "error" | "surface" | "outline">
+export type mainColorType = Pick<ThemeOptions, mainColor>
 
-export type mainColorTypeKey = Partial<mainColorType>
 

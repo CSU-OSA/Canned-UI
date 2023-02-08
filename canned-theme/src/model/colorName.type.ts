@@ -24,7 +24,7 @@ export type colorType =
     "warn" |
     "onWarn" |
     "WarnContainer" |
-    "onWarmContainer" |
+    "onWarnContainer" |
     "error" |
     "onError" |
     "errorContainer" |
@@ -114,3 +114,6 @@ export type colorType =
     "outline-7" |
     "outline-8" |
     "outline-9";
+
+
+    
