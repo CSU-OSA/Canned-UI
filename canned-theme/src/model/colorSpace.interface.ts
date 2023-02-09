@@ -1,19 +1,19 @@
-export interface RGB {
+export interface RGBUtil {
   r: number;
   g: number;
   b: number;
 }
 
-export interface HSL {
+export interface HSLUtil {
   h: number;
   s: number;
   l: number;
 }
 
-export interface HCT {
+export interface HCTUtil {
   h: number;
   c: number;
   t: number;
 }
 
-export type HEX = string;
+export type HEXUtil = string;

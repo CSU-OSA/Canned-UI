@@ -1,4 +1,4 @@
-import type {HCT, HEX, HSL, RGB} from "../model/colorSpace.interface";
+import type {HCTUtil, HEXUtil, HSLUtil, RGBUtil} from "../model/colorSpace.interface";
 import {argbFromRgb, Hct} from "@material/material-color-utilities";
 
 /**
@@ -6,7 +6,7 @@ import {argbFromRgb, Hct} from "@material/material-color-utilities";
  * @param hex RGB(HEX) color - such as "#000000"
  * @constructor
  */
-export function HEX2RGB(hex: HEX): RGB {
+export function HEX2RGB(hex: HEXUtil): RGBUtil {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
@@ -22,7 +22,7 @@ export function HEX2RGB(hex: HEX): RGB {
  * @param rgb RGB color - such as {r: 0, g: 0, b: 0}
  * @constructor
  */
-export function RGB2HEX(rgb: RGB): HEX {
+export function RGB2HEX(rgb: RGBUtil): HEXUtil {
   const { r, g, b } = rgb;
   return `#${((r << 16) + (g << 8) + b).toString(16).slice(1)}`;
 }
@@ -32,7 +32,7 @@ export function RGB2HEX(rgb: RGB): HEX {
  * @param hex RGB(HEX) color - such as "#000000"
  * @constructor
  */
-export function HEX2HSL(hex: HEX): HSL {
+export function HEX2HSL(hex: HEXUtil): HSLUtil {
   const rgb = HEX2RGB(hex);
   return RGB2HSL(rgb);
 }
@@ -42,7 +42,7 @@ export function HEX2HSL(hex: HEX): HSL {
  * @param hsl HSL color - such as {h: 0, s: 0, l: 0}
  * @constructor
  */
-export function HSL2HEX(hsl: HSL): HEX {
+export function HSL2HEX(hsl: HSLUtil): HEXUtil {
   const rgb = HSL2RGB(hsl);
   return RGB2HEX(rgb);
 }
@@ -52,7 +52,7 @@ export function HSL2HEX(hsl: HSL): HEX {
  * @param rgb RGB color - such as {r: 0, g: 0, b: 0}
  * @constructor
  */
-export function RGB2HSL(rgb: RGB): HSL {
+export function RGB2HSL(rgb: RGBUtil): HSLUtil {
   const { r, g, b } = rgb;
   const r1 = r / 255;
   const g1 = g / 255;
@@ -94,7 +94,7 @@ export function RGB2HSL(rgb: RGB): HSL {
  * @param hsl HSL color - such as {h: 0, s: 0, l: 0}
  * @constructor
  */
-export function HSL2RGB(hsl: HSL): RGB {
+export function HSL2RGB(hsl: HSLUtil): RGBUtil {
   const { h, s, l } = hsl;
   let r: number;
   let g: number;
@@ -128,7 +128,7 @@ export function HSL2RGB(hsl: HSL): RGB {
  * @param rgb RGB color - such as {r: 0, g: 0, b: 0}
  * @constructor
  */
-export function RGB2HCT(rgb: RGB): HCT {
+export function RGB2HCT(rgb: RGBUtil): HCTUtil {
   const { r, g, b } = rgb;
   const hct = Hct.fromInt(argbFromRgb(r, g, b));
   return { h: hct.hue, c: hct.chroma, t: hct.tone };
@@ -139,7 +139,7 @@ export function RGB2HCT(rgb: RGB): HCT {
  * @param hct Google-HCT color - such as {h: 0, c: 0, t: 0}
  * @constructor
  */
-export function HCT2RGB(hct: HCT): RGB {
+export function HCT2RGB(hct: HCTUtil): RGBUtil {
   const { h, c, t } = hct;
   const hctObj = Hct.from(h, c, t);
   const argb = hctObj.toInt();

@@ -2,10 +2,11 @@ import { ThemeOptions } from "@/model/theme.type";
 import { themeFromSourceColor, argbFromHex, hexFromArgb } from "@material/material-color-utilities";
 import { mainColorType } from "@/model/mainColor.type";
 import { CorePalette } from "@material/material-color-utilities";
-import { HEX } from "@/model/colorSpace.interface";
+import { Color } from "@/util/color";
+
 
 // 参数应该加个seed
-export function createTheme(name: string, seed: HEX, options: Partial<mainColorType>) {
+export function createTheme(name: string, seed: Color, options: Partial<mainColorType>) {
 
     if (options == null) {
         // callback default theme
@@ -139,8 +140,8 @@ export function createTheme(name: string, seed: HEX, options: Partial<mainColorT
 
 
     // 参考scheme.js
-    const palette = CorePalette.of(argbFromHex(seed));
-    const theme = themeFromSourceColor(argbFromHex(seed), [
+    const palette = CorePalette.of(argbFromHex(seed.toHEX()));
+    const theme = themeFromSourceColor(argbFromHex(seed.toHEX()), [
         {
             name: "info",
             value: CorePalette.of(palette.a1.tone(40)).a1.tone(40), // randomly select based on seed

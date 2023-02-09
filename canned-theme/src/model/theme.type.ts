@@ -1,3 +1,3 @@
 import { colorType } from "./colorName.type";
-import { RGB, HCT, HEX, HSL } from "./colorSpace.interface";
-export type ThemeOptions = Record<colorType, RGB | HCT | HEX | HSL>;
+import { RGBUtil, HCTUtil, HEXUtil, HSLUtil } from "./colorSpace.interface";
+export type ThemeOptions = Record<colorType, RGBUtil | HCTUtil | HEXUtil | HSLUtil>;
